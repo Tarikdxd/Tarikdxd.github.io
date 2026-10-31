@@ -3,8 +3,10 @@
 Kişisel portfolyo: güvenlik araçları, açık kaynak projeler ve katkılar.
 
 - Canlı: <https://tarikdxd.github.io>
-- Teknoloji: bağımlılıksız HTML + CSS, GitHub Pages
-- Gizlilik: analitik yok, çerez yok, dış font yok
+- Teknoloji: bağımlılıksız HTML + CSS + küçük JS, GitHub Pages
+- Font: Roboto (Apache-2.0, self-host; `assets/fonts/`)
+- Tasarım: sohbet arayüzü, siyah tema, solda portre, sağda bölüm rayı
+- Gizlilik: analitik yok, çerez yok, dış font isteği yok
 
 ## Yerel önizleme
 
