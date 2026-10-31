@@ -3,13 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tarık Tozlu — Güvenlik Araçları ve Açık Kaynak</title>
+    <title>Tarık Tozlu — Güvenlik Araçları ve Terminal Ajanları</title>
     <meta name="description" content="Yetkili sızma testi ve hata avcılığı için Türkçe açık kaynak araçlar: Eschaton-Agent, security-headers-checker, eschaton-mcp." />
-    <meta name="theme-color" content="#0b1220" />
     <meta name="author" content="Tarık Tozlu" />
+    <meta name="theme-color" content="#000000" />
     <link rel="canonical" href="https://tarikdxd.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tarık Tozlu" />
+    <meta property="og:title" content="Tarık Tozlu — Güvenlik Araçları ve Terminal Ajanları" />
+    <meta property="og:description" content="Terminal ajanları, güvenlik araçları ve MCP entegrasyonları. TypeScript · Python · Bun · Linux." />
+    <meta property="og:url" content="https://tarikdxd.github.io/" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Tarık Tozlu — Güvenlik Araçları ve Açık Kaynak" />
+    <meta name="twitter:title" content="Tarık Tozlu — Güvenlik Araçları ve Terminal Ajanları" />
     <meta name="twitter:description" content="Terminal ajanları, güvenlik araçları ve MCP entegrasyonları. TypeScript · Python · Bun · Linux." />
     <script type="application/ld+json">
       {
@@ -19,189 +24,197 @@
         "url": "https://tarikdxd.github.io/",
         "jobTitle": "Security tooling developer",
         "worksFor": { "@type": "Organization", "name": "Eschaton LTD." },
-        "sameAs": [
-          "https://github.com/Tarikdxd",
-          "https://orcid.org/0009-0008-7306-9232"
-        ],
-        "knowsAbout": [
-          "Penetration testing",
-          "Application security",
-          "TypeScript",
-          "Python",
-          "Model Context Protocol"
-        ]
+        "sameAs": ["https://github.com/Tarikdxd", "https://orcid.org/0009-0008-7306-9232"],
+        "knowsAbout": ["Penetration testing", "Application security", "TypeScript", "Python", "Model Context Protocol"]
       }
     </script>
-    <meta property="og:title" content="Tarık Tozlu — Güvenlik Araçları ve Açık Kaynak" />
-    <meta property="og:description" content="Terminal ajanları, güvenlik araçları ve MCP entegrasyonları. TypeScript · Python · Bun · Linux." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tarikdxd.github.io/" />
     <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">İçeriğe geç</a>
 
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="Tarık Tozlu, ana sayfa">
-        <img src="assets/logo.svg" alt="" width="32" height="32" />
-        <span>Tarık Tozlu</span>
-      </a>
-      <nav aria-label="Ana gezinme">
-        <a href="#projects">Projeler</a>
-        <a href="#contributions">Katkılar</a>
-        <a href="#stack">Teknolojiler</a>
-        <a href="#contact">İletişim</a>
-      </nav>
+    <div class="splash" id="splash" aria-hidden="true">
+      <div class="splash-inner">
+        <img src="assets/logo.svg" width="64" height="64" alt="" />
+        <span>tarık</span>
+      </div>
+    </div>
+
+    <header class="topbar">
+      <button class="icon-button" id="menu-button" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="drawer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+      </button>
+      <div class="topbar-actions">
+        <a class="icon-button" href="https://github.com/Tarikdxd" target="_blank" rel="noopener" aria-label="GitHub profili">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z" /></svg>
+        </a>
+        <button class="icon-button" id="info-button" type="button" aria-label="İletişime git">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" /><path d="M9 4v16" /></svg>
+        </button>
+      </div>
     </header>
 
-    <main id="main">
-      <section class="hero">
-        <div class="hero-copy">
-        <p class="eyebrow">Security &amp; Privacy · Offensive Tooling</p>
-        <h1>Tarık Tozlu</h1>
-        <p class="lead">
-          Yetkili sızma testi ve hata avcılığı için araçlar geliştiriyorum. Terminal
-          ajanları, ağ araçları, MCP entegrasyonları ve otomasyon üzerine çalışıyorum.
-          <span class="muted">TypeScript · Python · Bun · Linux.</span>
-        </p>
-        <div class="actions">
-          <a class="button primary" href="https://github.com/Tarikdxd/Eschaton-Agent">Eschaton-Agent</a>
-          <a class="button" href="https://github.com/Tarikdxd">GitHub</a>
-          <a class="button" href="https://github.com/Tarikdxd?tab=repositories">Repolar</a>
-        </div>
-        </div>
-        <div class="terminal" aria-hidden="true">
-          <div class="terminal-bar">
-            <span></span><span></span><span></span>
-            <code>~/eschaton</code>
+    <div class="drawer" id="drawer" hidden>
+      <button class="icon-button drawer-close" id="drawer-close" type="button" aria-label="Menüyü kapat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+      </button>
+      <nav aria-label="Bölümler">
+        <a href="#about"><span>01</span>Hakkımda</a>
+        <a href="#projects"><span>02</span>Projeler</a>
+        <a href="#contributions"><span>03</span>Katkılar</a>
+        <a href="#stack"><span>04</span>Teknolojiler</a>
+        <a href="#contact"><span>05</span>İletişim</a>
+      </nav>
+      <div class="drawer-meta">
+        <a href="https://github.com/Tarikdxd" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://orcid.org/0009-0008-7306-9232" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://github.com/Tarikdxd/Tarikdxd/issues/new" target="_blank" rel="noopener">Mesaj bırak</a>
+      </div>
+    </div>
+
+    <main class="stage" id="main">
+      <div class="portrait" aria-hidden="true">
+        <img src="assets/avatar.jpg" alt="" />
+      </div>
+
+      <div class="chat">
+        <article class="msg assistant" id="about">
+          <p class="kicker">Security &amp; Privacy · Offensive Tooling</p>
+          <h1>Tarık Tozlu</h1>
+          <p>
+            Yetkili sızma testi ve hata avcılığı için araçlar geliştiriyorum. Terminal
+            ajanları, ağ araçları, MCP entegrasyonları ve otomasyon üzerine çalışıyorum.
+          </p>
+          <p class="muted">
+            Eschaton LTD. · Türkçe açık kaynak · TypeScript, Python, Bun, Linux.
+          </p>
+        </article>
+
+        <div class="msg user">Neler inşa ettin?</div>
+
+        <article class="msg assistant" id="projects">
+          <div class="project-grid">
+            <a class="project-card" href="https://github.com/Tarikdxd/Eschaton-Agent" target="_blank" rel="noopener">
+              <div class="project-head"><h3>Eschaton-Agent</h3><span class="version">v1.0.0</span></div>
+              <p>Yetkili sızma testi ve kod yazma için insan denetimli terminal ajanı. Türkçe arayüz, beceri kütüphanesi, MCP ve izin akışı.</p>
+              <ul class="tags"><li>TypeScript</li><li>MCP</li><li>CLI</li></ul>
+            </a>
+            <a class="project-card" href="https://github.com/Tarikdxd/security-headers-checker" target="_blank" rel="noopener">
+              <div class="project-head"><h3>security-headers-checker</h3><span class="version">v0.2.0</span></div>
+              <p>CSP, HSTS, CORS ve çerez bayraklarını denetleyen, puanlayan Bun CLI ve GitHub Action. SARIF/Code Scanning çıktısı.</p>
+              <ul class="tags"><li>Bun</li><li>Security</li><li>SARIF</li></ul>
+            </a>
+            <a class="project-card" href="https://github.com/Tarikdxd/eschaton-mcp" target="_blank" rel="noopener">
+              <div class="project-head"><h3>eschaton-mcp</h3><span class="version">v0.2.0</span></div>
+              <p>nmap, httpx, ffuf, sqlmap ve nuclei için kapsam zorlamalı MCP sunucusu. Fail-closed kapsam, metadata bloğu ve dry-run.</p>
+              <ul class="tags"><li>MCP</li><li>Pentest</li><li>TypeScript</li></ul>
+            </a>
+            <a class="project-card" href="https://github.com/Tarikdxd/Eschaton-DNS" target="_blank" rel="noopener">
+              <div class="project-head"><h3>Eschaton-DNS</h3></div>
+              <p>DNS-over-HTTPS proxy ve telemetri/reklam engelleyici; canlı terminal TUI.</p>
+              <ul class="tags"><li>Python</li><li>DNS</li><li>Privacy</li></ul>
+            </a>
+            <a class="project-card" href="https://github.com/Tarikdxd/Eschaton-Tunnel" target="_blank" rel="noopener">
+              <div class="project-head"><h3>Eschaton-Tunnel</h3></div>
+              <p>Sıfır yapılandırmalı yerel HTTP/TCP tüneli; ngrok alternatifi.</p>
+              <ul class="tags"><li>Python</li><li>Networking</li></ul>
+            </a>
+            <a class="project-card" href="https://github.com/Tarikdxd/awesome-turkish-security" target="_blank" rel="noopener">
+              <div class="project-head"><h3>awesome-turkish-security</h3></div>
+              <p>Türkçe açıklamalı, linkleri CI ile doğrulanan siber güvenlik kaynakları listesi. Katkıya açık.</p>
+              <ul class="tags"><li>Awesome list</li><li>Türkçe</li></ul>
+            </a>
           </div>
-          <pre><code><span class="prompt">$</span> eschaton
-<span class="dim">EA v1.0.0 · ollama · engagement</span>
+        </article>
 
-<span class="prompt">›</span> /target https://app.example.com
-<span class="ok">hedef ayarlandı</span>
+        <div class="msg user">Açık kaynağa katkın var mı?</div>
 
-<span class="prompt">›</span> orders API'sini IDOR için test et
-<span class="dim">⏺ beceri webvuln · forked</span>
-<span class="ok">★ (yüksek) /api/orders/{id} üzerinde IDOR</span>
-<span class="dim">  ./findings/idor-orders.md dosyasına yazıldı</span></code></pre>
-        </div>
-      </section>
-
-      <section id="about" class="section">
-        <h2>Hakkımda</h2>
-        <div class="about-grid">
-          <p>
-            <strong>Eschaton LTD.</strong> çatısı altında yetkili sızma testi ve hata
-            avcılığı için araçlar geliştiriyorum. Ürünlerin arayüzü ve dokümantasyonu
-            öncelikli olarak Türkçe.
-          </p>
-          <p>
-            <strong>Security, privacy.</strong> Yerel, denetlenebilir ve minimum veri
-            toplayan tasarımlar. Yalnızca yazılı izin verilen sistemlerde test.
-          </p>
-        </div>
-      </section>
-
-      <section id="projects" class="section">
-        <div class="section-head">
-          <h2>Öne çıkan projeler</h2>
-          <a href="https://github.com/Tarikdxd?tab=repositories">Tümü →</a>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <h3><a href="https://github.com/Tarikdxd/Eschaton-Agent">Eschaton-Agent</a></h3>
-            <p>Yetkili sızma testi ve kod yazma için insan denetimli terminal ajanı. Türkçe arayüz, beceri kütüphanesi, MCP ve izin akışı.</p>
-            <ul class="tags"><li>TypeScript</li><li>MCP</li><li>CLI</li></ul>
-          </article>
-          <article class="card">
-            <h3><a href="https://github.com/Tarikdxd/security-headers-checker">security-headers-checker</a></h3>
-            <p>CSP, HSTS, CORS ve çerez bayraklarını denetleyen, puanlayan Bun CLI ve GitHub Action. Sıfır çalışma zamanı bağımlılığı.</p>
-            <ul class="tags"><li>Bun</li><li>Security</li><li>Action</li></ul>
-          </article>
-          <article class="card">
-            <h3><a href="https://github.com/Tarikdxd/eschaton-mcp">eschaton-mcp</a></h3>
-            <p>nmap, httpx, ffuf ve sqlmap için kapsam zorlamalı MCP sunucusu. Fail-closed kapsam, metadata bloğu ve dry-run.</p>
-            <ul class="tags"><li>MCP</li><li>Pentest</li><li>TypeScript</li></ul>
-          </article>
-          <article class="card">
-            <h3><a href="https://github.com/Tarikdxd/Eschaton-DNS">Eschaton-DNS</a></h3>
-            <p>DNS-over-HTTPS proxy ve telemetri/reklam engelleyici; canlı terminal TUI.</p>
-            <ul class="tags"><li>Python</li><li>DNS</li><li>Privacy</li></ul>
-          </article>
-          <article class="card">
-            <h3><a href="https://github.com/Tarikdxd/Eschaton-Tunnel">Eschaton-Tunnel</a></h3>
-            <p>Sıfır yapılandırmalı yerel HTTP/TCP tüneli; ngrok alternatifi.</p>
-            <ul class="tags"><li>Python</li><li>Networking</li></ul>
-          </article>
-          <article class="card">
-            <h3><a href="https://github.com/Tarikdxd/awesome-turkish-security">awesome-turkish-security</a></h3>
-            <p>Türkçe açıklamalı, linkleri doğrulanmış siber güvenlik kaynakları listesi. Katkıya açık.</p>
-            <ul class="tags"><li>Awesome list</li><li>Türkçe</li></ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="contributions" class="section">
-        <h2>Açık kaynak katkıları</h2>
-        <ul class="contributions">
-          <li>
-            <div>
-              <a href="https://github.com/ffuf/ffuf/pull/964">ffuf #964</a>
+        <article class="msg assistant" id="contributions">
+          <ul class="contributions">
+            <li>
+              <div class="contribution-head"><a href="https://github.com/airlock-sec/airlock/pull/108" target="_blank" rel="noopener">airlock #108</a><span class="status done">Merge edildi</span></div>
+              <p>Yazılamayan manifest/rapor yolunu exit 2 kullanım hatası olarak sınıflandırır.</p>
+            </li>
+            <li>
+              <div class="contribution-head"><a href="https://github.com/ffuf/ffuf/pull/964" target="_blank" rel="noopener">ffuf #964</a><span class="status ok">CI yeşil</span></div>
               <p>Dar terminalde progress satırının taşmasını düzeltir.</p>
-            </div>
-            <span class="status ok">CI yeşil</span>
-          </li>
-          <li>
-            <div>
-              <a href="https://github.com/trufflesecurity/trufflehog/pull/5499">trufflehog #5499</a>
+            </li>
+            <li>
+              <div class="contribution-head"><a href="https://github.com/trufflesecurity/trufflehog/pull/5499" target="_blank" rel="noopener">trufflehog #5499</a><span class="status ok">CLA imzalandı</span></div>
               <p>README'ye doğru anchor'larla içindekiler tablosu ekler.</p>
-            </div>
-            <span class="status ok">CLA imzalandı</span>
-          </li>
-          <li>
-            <div>
-              <a href="https://github.com/airlock-sec/airlock/pull/108">airlock #108</a>
-              <p>Yazılamayan manifest/rapor yolunu exit 2 kullanım hatası yapar.</p>
-            </div>
-            <span class="status ok">Merge edildi</span>
-          </li>
-          <li>
-            <div>
-              <a href="https://github.com/gitleaks/gitleaks/pull/2332">gitleaks #2332</a>
+            </li>
+            <li>
+              <div class="contribution-head"><a href="https://github.com/gitleaks/gitleaks/pull/2332" target="_blank" rel="noopener">gitleaks #2332</a><span class="status wait">İncelemede</span></div>
               <p>SourceGraph çok satırlı token vakası için regresyon testi.</p>
-            </div>
-            <span class="status review">İncelemede</span>
-          </li>
-        </ul>
-        <p class="release">
-          <a href="https://github.com/Tarikdxd/Eschaton-Agent/releases/tag/v1.0.0">Eschaton Agent v1.0.0 →</a>
-          Türkçe arayüz, 36 beceri, MCP ve insan denetimli izin akışı.
-        </p>
-      </section>
+            </li>
+          </ul>
+          <p class="muted release-line">
+            <a href="https://github.com/Tarikdxd/Eschaton-Agent/releases/tag/v1.0.0" target="_blank" rel="noopener">Eschaton Agent v1.0.0 →</a>
+            Türkçe arayüz, 36 beceri, MCP ve insan denetimli izin akışı.
+          </p>
+        </article>
 
-      <section id="stack" class="section">
-        <h2>Teknolojiler</h2>
-        <ul class="stack">
-          <li>TypeScript</li><li>Python</li><li>Bun</li><li>Node.js</li><li>Linux</li>
-          <li>Burp Suite</li><li>Docker</li><li>Git</li><li>MCP</li>
-        </ul>
-      </section>
+        <div class="msg user">Neler kullanıyorsun?</div>
 
-      <section id="contact" class="section">
-        <h2>İletişim</h2>
-        <p>Proje fikirleri, güvenlik bildirimleri veya iş birliği için GitHub üzerinden ulaşabilirsin.</p>
-        <div class="actions">
-          <a class="button primary" href="https://github.com/Tarikdxd">GitHub</a>
-          <a class="button" href="https://orcid.org/0009-0008-7306-9232">ORCID</a>
-        </div>
-      </section>
+        <article class="msg assistant" id="stack">
+          <ul class="chips">
+            <li>TypeScript</li><li>Python</li><li>Bun</li><li>Node.js</li><li>Linux</li>
+            <li>Burp Suite</li><li>Docker</li><li>Git</li><li>MCP</li>
+          </ul>
+        </article>
+
+        <div class="msg user">Nasıl ulaşırım?</div>
+
+        <article class="msg assistant" id="contact">
+          <p>Proje fikirleri, güvenlik bildirimleri veya iş birliği için GitHub üzerinden ulaşabilirsin.</p>
+          <div class="actions">
+            <a class="button primary" href="https://github.com/Tarikdxd" target="_blank" rel="noopener">GitHub</a>
+            <a class="button" href="https://orcid.org/0009-0008-7306-9232" target="_blank" rel="noopener">ORCID</a>
+            <a class="button" href="https://github.com/Tarikdxd/Tarikdxd/issues/new" target="_blank" rel="noopener">Mesaj bırak</a>
+          </div>
+        </article>
+
+        <p class="assistant-note">Yalnızca yetkili sistemlerde test yapın. Yetkisiz erişim suçtur.</p>
+      </div>
+
+      <div class="composer-wrap">
+        <form class="composer" id="composer">
+          <img class="composer-avatar" src="assets/avatar.jpg" alt="" width="30" height="30" />
+          <a class="composer-plus" href="https://github.com/Tarikdxd?tab=repositories" target="_blank" rel="noopener" aria-label="Repolar">+</a>
+          <input id="message" name="message" type="text" autocomplete="off" placeholder="Bir mesaj yaz… (GitHub'da aç)" aria-label="Mesaj" />
+          <button class="composer-send" type="submit" aria-label="Gönder">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+          </button>
+        </form>
+        <p class="composer-note">Tarık bir insan. Yine de önemli bilgileri doğrula. · Statik site, analitik yok.</p>
+      </div>
+
+      <div class="brand-mark" aria-hidden="true">Eschaton</div>
     </main>
 
-    <footer class="site-footer">
-      <p>© 2026 Tarık Tozlu</p>
-      <p class="muted">Yalnızca yetkili sistemlerde test yapın. Yetkisiz erişim suçtur.</p>
-    </footer>
+    <aside class="rail" aria-label="Hızlı gezinme">
+      <span class="rail-label">CAST</span>
+      <a class="rail-item" href="#about" data-section="about" aria-label="Hakkımda">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5" /><path d="M5 20c.8-3.6 3.4-5.5 7-5.5s6.2 1.9 7 5.5" /></svg>
+      </a>
+      <a class="rail-item" href="#projects" data-section="projects" aria-label="Projeler">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7l5 5-5 5M13 17h6" /></svg>
+      </a>
+      <a class="rail-item" href="#contributions" data-section="contributions" aria-label="Katkılar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2l1.1-6.2L3 9.6l6.2-.9L12 3Z" /></svg>
+      </a>
+      <a class="rail-item" href="#stack" data-section="stack" aria-label="Teknolojiler">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13 5l-2 14" /></svg>
+      </a>
+      <a class="rail-item" href="#contact" data-section="contact" aria-label="İletişim">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" /><path d="m4 7 8 6 8-6" /></svg>
+      </a>
+      <span class="rail-line"></span>
+      <a class="rail-item rail-text" href="https://github.com/Tarikdxd" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+      <a class="rail-item rail-text" href="https://orcid.org/0009-0008-7306-9232" target="_blank" rel="noopener" aria-label="ORCID">iD</a>
+    </aside>
+
+    <script src="app.js" defer></script>
   </body>
 </html>
